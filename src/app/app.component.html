@@ -1,7 +1,45 @@
-<h1>{{ title }}</h1>
+<div class="example-container">
+  <!-- TOOLBAR -->
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+    <span class="example-app-name"> G P S </span>
 
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<agm-map [latitude]= "lat" [longitude]= "lng">
-  <agm-marker [latitude]= "lat" [longitude]= "lng"></agm-marker>
-</agm-map>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+  <!-- SIDENAV -->
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #sidenav style="width: 200px">
+      <button
+        mat-stroked-button
+        (click)="sidenav.toggle()"
+        routerLink="/"
+        style="cursor: pointer"
+      >
+        <mat-icon>insert_drive_file</mat-icon>
+        <span>Ingresar imagen</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button
+        mat-stroked-button
+        (click)="sidenav.toggle()"
+        routerLink="/"
+        style="cursor: pointer"
+      >
+        <mat-icon>work</mat-icon>
+        <span>Descargar imagenes</span>
+      </button>
+    </mat-sidenav>
+
+    <!-- Navegacion principal -->
+    <mat-sidenav-content>
+
+      <router-outlet></router-outlet>
+      <app-principal></app-principal>
+
+    </mat-sidenav-content>
+    <!-- FIN Navegacion principal -->
+  </mat-sidenav-container>
+</div>
