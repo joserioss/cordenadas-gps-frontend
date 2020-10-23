@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cordenadasGPS"
+    }
+  },
+  "defaultProject": "cordenadasGPS",
+  "cli": {
+    "analytics": "c0f7f5b1-4231-411d-aa22-c5192f3e638b"
+  }
 }
