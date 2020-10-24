@@ -1,3 +1,4 @@
+import { MapaComponent } from './pages/mapa/mapa.component';
 import { UploadFilesComponent } from './pages/upload-files/upload-files.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { NgModule } from '@angular/core';
@@ -5,7 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: 'principal', component: PrincipalComponent },
-  { path: 'uploadFiles', component: UploadFilesComponent }
+  { path: 'uploadFiles', component: UploadFilesComponent },
+  { path: 'mapa', component: MapaComponent }
 ];
 
 @NgModule({

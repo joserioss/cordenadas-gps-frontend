@@ -1,1 +1,67 @@
-<p>upload-files works!</p>
+<div class="content">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Subir imagen</mat-card-title>
+      <mat-card-subtitle>(Maximo 10MB por archivo)</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <div mode="buffer" *ngFor="let progress of progressInfo">
+      <span>{{ progress.fileName }}</span>
+      <span>{{ progress.value }}%</span>
+      <div id="progressbar">
+        <mat-progress-bar mode="buffer" value="{{ progress.value }}">
+        </mat-progress-bar>
+      </div>
+    </div>
+    <mat-card-content>
+      <h1>Archivos previamente cargados</h1>
+      <span>{{ message }}</span>
+
+      <ul *ngFor="let file of fileInfos | async">
+        <button mat-stroked-button>
+          {{ file.name }}
+        </button>
+        <a href="{{ file.url }}">
+          <button mat-stroked-button color="primary">
+            <mat-icon>cloud_download</mat-icon>
+          </button>
+        </a>
+        <button mat-stroked-button color="warn">
+          <mat-icon (click)="deleteFile(file.name)">delete</mat-icon>
+        </button>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <div>
+        <button
+          id="selectButton"
+          mat-raised-button
+          color="primary"
+          (click)="fileInput.click()"
+        >
+          Seleccione archivo
+        </button>
+
+        <input
+          #fileInput
+          type="file"
+          hidden
+          multiple
+          (change)="selectFiles($event)"
+        />
+        <span *ngIf="fileName">{{ fileName }}</span>
+
+        <button
+          id="uploadButton"
+          mat-raised-button
+          *ngIf="selectedFiles"
+          [disabled]="!selectedFiles"
+          (click)="uploadFiles()"
+          color = "accent"
+        >
+          Subir Archivos
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
