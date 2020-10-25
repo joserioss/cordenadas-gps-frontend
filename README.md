@@ -2,6 +2,8 @@
 
 El proyecto consta de de diferentes modulos, componentes y servicios que permiten ingresar una imagen mediante esta interfaz, la cual se conecta con el backend y su servicio rest que se encarga de guardar la imagen en una carpeta local y ademas cargar los datos necesarios en una base de datos.
 
+Para revisar el backend del proyecto, acceder al siguiente enlace: https://github.com/joserioss/cordenadas-gps-backend .
+
 ## Vista Previa
 
 si se corre el programa con el comando ng s --o y se abre la url: localhost:4200.
