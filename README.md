@@ -13,21 +13,26 @@ Se puede acceder a dos pantallas:
 - pantalla mantenedora: para subir, eliminar y descargar imagenes.
 
 ## Pantalla principal (http://localhost:4200/principal/ o http://localhost:4200/)
+
 ![Alt text](https://github.com/joserioss/cordenadas-gps-frontend/blob/main/src/assets/pantallaprincipal.png)
 
 ## Pantalla mantenedora: (http://localhost:4200/principal/uploadFiles)
+
 ![Alt text](https://github.com/joserioss/cordenadas-gps-frontend/blob/main/src/assets/pantallauploadfiles.png)
 
 ### Cuando se sube una imagen se visualizan las siguientes opciones
 - Descargar
 - Eliminar
-- Info: al seleccionar esta opcion se veran los datos de latitud y longitud que posee la imagen (en el caso de tener esos metadatos )
+- Info: al seleccionar esta opción se verán los datos de latitud y longitud que posee la imagen (en el caso de tener esos metadatos)
+
 ![Alt text](https://github.com/joserioss/cordenadas-gps-frontend/blob/main/src/assets/imagenesCargadas.png)
 
-### A volver a la pantalla principal se vera una tabla con todas las imagenes cargadas en el mantenedor:
+### Al volver a la pantalla principal se verá una tabla con todas las imágenes cargadas en el mantenedor:
+
 ![Alt text](https://github.com/joserioss/cordenadas-gps-frontend/blob/main/src/assets/PantallaPrincipalConImagenesCargadas.png)
 
 ### Al seleccionar una de las imagenes:
+
 ![Alt text](https://github.com/joserioss/cordenadas-gps-frontend/blob/main/src/assets/MapaConSeleccionDeCordenadas.png)
 
-observacion: Actualmente, en estos momentos solo permite la seleccion de solo un marcador en el mapa. 
+Observación: Actualmente, solo se permite la selección de solo un marcador en el mapa.
