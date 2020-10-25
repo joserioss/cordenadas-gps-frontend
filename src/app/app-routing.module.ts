@@ -5,8 +5,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'principal', component: PrincipalComponent },
-  { path: 'uploadFiles', component: UploadFilesComponent },
+  { path: 'principal', component: PrincipalComponent, children:[
+    { path: 'uploadFiles', component: UploadFilesComponent }
+  ]},
   { path: 'mapa', component: MapaComponent }
 ];
 

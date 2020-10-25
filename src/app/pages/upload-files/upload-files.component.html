@@ -29,7 +29,21 @@
         <button mat-stroked-button color="warn">
           <mat-icon (click)="deleteFile(file.name)">delete</mat-icon>
         </button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>info</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>place</mat-icon>
+            <span>Latitud: {{ file.lat }}</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>place</mat-icon>
+            <span>Longitud: {{ file.lon }}</span>
+          </button>
+        </mat-menu>
       </ul>
+
     </mat-card-content>
     <mat-card-actions>
       <div>

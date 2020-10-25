@@ -1,3 +1,5 @@
 <router-outlet></router-outlet>
 
-<app-mapa></app-mapa>
+<div class="content" [hidden]="route.children.length !== 0">
+  <app-mapa></app-mapa>
+</div>

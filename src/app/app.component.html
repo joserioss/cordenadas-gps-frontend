@@ -5,7 +5,7 @@
       <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
       <mat-icon *ngIf="sidenav.opened">close</mat-icon>
     </button>
-    <span class="example-app-name"> G P S </span>
+    <span class="example-app-name"> <mat-icon> G P S</mat-icon></span>
 
     <span class="example-spacer"></span>
   </mat-toolbar>
@@ -15,7 +15,16 @@
       <button
         mat-stroked-button
         (click)="sidenav.toggle()"
-        routerLink="/uploadFiles"
+        routerLink="principal/"
+        style="cursor: pointer"
+      >
+        <mat-icon>home</mat-icon>
+        <span>Inicio</span>
+      </button>
+      <button
+        mat-stroked-button
+        (click)="sidenav.toggle()"
+        routerLink="principal/uploadFiles"
         style="cursor: pointer"
       >
         <mat-icon>insert_drive_file</mat-icon>
@@ -28,7 +37,7 @@
         routerLink="/"
         style="cursor: pointer"
       >
-        <mat-icon>work</mat-icon>
+        <mat-icon>cloud_download</mat-icon>
         <span>Descargar imagenes</span>
       </button>
     </mat-sidenav>

@@ -1,6 +1,51 @@
 <div class="content">
   <h1>{{ title }}</h1>
-  <agm-map [latitude]= "lat" [longitude]= "lng">
-    <agm-marker [latitude]= "lat" [longitude]= "lng"></agm-marker>
+  <agm-map [latitude]="latRef" [longitude]="lonRef" [zoom]="4">
+    <agm-marker
+      *ngFor= "let marker of markers; let i = index"
+      [latitude]= "+marker.lat[i]"
+      [longitude]= "+marker.lon[i]"
+    ></agm-marker>
   </agm-map>
+
+  <mat-card>
+    <mat-card-header>
+      <h1>Archivos previamente cargados</h1>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            NOMBRE
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="lat">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            Latitud
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{ row.lat }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="lon">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            Longitud
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{ row.lon }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <mat-checkbox disableSelect (click)="listarLatLon(row)"></mat-checkbox>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>
+      </mat-table>
+    </mat-card-content>
+  </mat-card>
 </div>

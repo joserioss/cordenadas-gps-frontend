@@ -10,6 +10,7 @@ import { PrincipalComponent } from './pages/principal/principal.component';
 import { UploadFilesComponent } from './pages/upload-files/upload-files.component';
 import { MapaComponent } from './pages/mapa/mapa.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
 
 
